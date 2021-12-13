@@ -4,17 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float movespeed = 2.0f;
-    int rotationSpeed = 90;
-    void Update()
+    public CharacterController2D controller;
+
+    void Update ()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Rotate(0, rotationSpeed * -Time.deltaTime, 0);
-        }
+        //if A or left arrow pressed this moves the player
+        Debug.Log(Input.GetAxisRaw("Horizontal"));
     }
 }

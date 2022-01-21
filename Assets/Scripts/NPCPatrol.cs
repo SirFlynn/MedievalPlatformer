@@ -47,7 +47,6 @@ public class NPCPatrol : MonoBehaviour
     {
         if (other.tag == "Wall")
         {
-            Debug.Log("you have hit a wall");
             touchingWall = true;
         }
     }

@@ -19,8 +19,7 @@ public class Player : MonoBehaviour
     public void Spawn(Vector3 position)
     {
         //creates the platform at the position and destroys old platform
-        GameObject clonePlatform = Instantiate(platform).transform.position = position;
-        clonePlatform.tag = "Clone";
+        Instantiate(platform).transform.position = position;
     }
 
     void Update()

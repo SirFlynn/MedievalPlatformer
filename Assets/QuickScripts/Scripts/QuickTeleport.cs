@@ -8,12 +8,12 @@ using UnityEngine;
 namespace QuickScripts
 {
 
-    [RequireComponent(typeof(Collider))]
+    [RequireComponent(typeof(Collider2D))]
     [AddComponentMenu("Quick Scripts/Quick Teleport")]
     public class QuickTeleport : MonoBehaviour
     {
 
-        Collider myCol;
+        Collider2D myCol;
         public bool isActive = true;
         public float coolDownTime = 0.1f;
         public bool maintainInertia = true;
@@ -56,7 +56,7 @@ namespace QuickScripts
 
         void Start()
         {
-            myCol = GetComponent<Collider>();
+            myCol = GetComponent<Collider2D>();
             if (myCol == null)
             {
                 Debug.Log("No Collider attached to the Teleporter! (gameobject " + this.name + ")");
@@ -88,7 +88,7 @@ namespace QuickScripts
                 Debug.LogError(this.name + " | Quick Teleporter has Exit Audio FX but no Exit Audio Source!", this.gameObject);
         }
 
-        void OnTriggerEnter(Collider other)
+        void OnTriggerEnter2D(Collider2D other)
         {
             if (isActive && !activated && interactableTags.Contains(other.tag.ToString()))
             {

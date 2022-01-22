@@ -10,9 +10,11 @@ public class PlatformPlacer : MonoBehaviour
 	public GameObject PlatformGhostPrefab;
 	
 	[Header("References")]
+	[Tooltip("Doesn't actually have a use yet.")]
 	public Transform Player;
 	
 	[Header("Lifetime")]
+	[Tooltip("How long the platform is active after placing it. Keep it at 0 for indefinite.")]
 	public float LifetimeDuration = 0;
 	public float ActiveTime = 0;
 	
@@ -48,10 +50,12 @@ public class PlatformPlacer : MonoBehaviour
 	{
 		if (_placementState == PlacementState.PlatformActive)
 		{
+			// Remove platform
 			if (Input.GetKeyDown(RemovalInputKey))
 				RemovePlatform();
 			else
 			{
+				// Increments by delta time and removes the platform if it exceeds the lifetime duration
 				ActiveTime += Time.deltaTime;
 				if (LifetimeDuration > 0 && ActiveTime > LifetimeDuration)
 					RemovePlatform();
@@ -86,16 +90,27 @@ public class PlatformPlacer : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+    /// Activates the platform at the defined position
+    /// </summary>
+    /// <param name="point">Point in world space</param>
 	public void PlacePlatform(Vector2 point)
 	{
 		_placementState = PlacementState.PlatformActive;
-
+		
 		_platform.position = point;
 		_platform.gameObject.SetActive(true);
+
+		// Reset active time
 		ActiveTime = 0;
+
+		// Platform placed!!
 		OnPlaceEvent?.Invoke(_platform);
 	}
 
+	/// <summary>
+    /// Deactivates an active platform
+    /// </summary>
 	public void RemovePlatform()
 	{
 		_placementState = PlacementState.Idle;

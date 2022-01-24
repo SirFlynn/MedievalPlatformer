@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6067954977200759605}
   - component: {fileID: 5981482348153450788}
   m_Layer: 3
-  m_Name: Env_GrassBlockNoColliders_01
+  m_Name: Env_GrassBlockGhost_01
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

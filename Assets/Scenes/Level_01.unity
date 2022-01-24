@@ -7154,6 +7154,42 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6067954977200759605, guid: 27d357abd28921249a0698e40dd8031c, type: 3}
   m_PrefabInstance: {fileID: 809588826}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &811425321 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 739805185783063535, guid: c2a6d4a733e9d4c4db68bbaf2d8dd8bd, type: 3}
+  m_PrefabInstance: {fileID: 1958536096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &811425327 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 739805185783063531, guid: c2a6d4a733e9d4c4db68bbaf2d8dd8bd, type: 3}
+  m_PrefabInstance: {fileID: 1958536096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &811425328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811425321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5af5c29391708d44fa1c2529601b0f5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlatformPrefab: {fileID: 1194175268806201591, guid: 2e132d2bc0bdcbb48b8c36196081053d, type: 3}
+  PlatformGhostPrefab: {fileID: 1194175268806201591, guid: aacdd15507bdd2443b1265880544776a, type: 3}
+  Player: {fileID: 811425327}
+  LifetimeDuration: 0
+  ActiveTime: 0
+  PlacementInputKey: 102
+  RemovalInputKey: 103
+  PlacementMouseButton: 0
+  OnPlaceEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRemoveEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &822166563
 PrefabInstance:
   m_ObjectHideFlags: 0
